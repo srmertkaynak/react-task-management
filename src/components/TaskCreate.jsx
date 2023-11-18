@@ -12,10 +12,14 @@ const TaskCreate = () => {
     setTaskDesc(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="task-create">
       <h3>Lütfen Task Ekleyiniz!</h3>
-      <form className="task-form">
+      <form className="task-form" onSubmit={handleSubmit}>
         <label className="task-label">Başlık</label>
         <input
           value={title}
