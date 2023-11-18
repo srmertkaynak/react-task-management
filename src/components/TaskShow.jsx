@@ -7,9 +7,7 @@ const TaskShow = ({ task, onDelete }) => {
     onDelete(task.id);
   };
 
-  const handleUpdateClick = () => {
-    setShowEdit(!showEdit);
-  };
+  const handleUpdateClick = () => {};
 
   return (
     <div className="task-show">
