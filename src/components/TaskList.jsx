@@ -1,7 +1,14 @@
 import React from "react";
+import TaskShow from "./TaskShow";
 
-const TaskList = () => {
-  return <div>TaskList</div>;
+const TaskList = ({ tasks }) => {
+  return (
+    <div>
+      {tasks.map((task, index) => {
+        return <TaskShow task={task} key={index} />;
+      })}
+    </div>
+  );
 };
 
 export default TaskList;
