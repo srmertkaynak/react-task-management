@@ -1,8 +1,8 @@
 import React from "react";
 
-const TaskShow = ({ task }) => {
-  const handleDelete = () => {
-    return;
+const TaskShow = ({ task, onDelete }) => {
+  const handleDeleteClick = () => {
+    onDelete(task.id);
   };
 
   const handleUpdate = () => {
@@ -15,7 +15,10 @@ const TaskShow = ({ task }) => {
       <h3 className="task-title">Açıklama</h3>
       <p>{task.taskDesc}</p>
       <div>
-        <button onClick={handleDelete} className="task-button-delete">
+        <button
+          onClick={handleDeleteClick}
+          value={task.id}
+          className="task-button-delete">
           Sil
         </button>
         <button onClick={handleUpdate} className="task-button-update">

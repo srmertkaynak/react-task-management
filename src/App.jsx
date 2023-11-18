@@ -18,11 +18,19 @@ function App() {
     setTasks(createdTasks);
   };
 
+  const deleteTaskById = (id) => {
+    const afterDeletingTasks = tasks.filter((task) => {
+      return task.id !== id;
+    });
+
+    setTasks(afterDeletingTasks);
+  };
+
   return (
     <div className="App">
       <TaskCreate onCreate={createTask} />
       <h2>Görevler</h2>
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} onDelete={deleteTaskById} />
     </div>
   );
 }
